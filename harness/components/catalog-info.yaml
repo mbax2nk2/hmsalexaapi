@@ -10,7 +10,7 @@ metadata:
   annotations:
 #    github.com/project-slug: harnessworkshop/idp-workshop
     backstage.io/techdocs-ref: dir:../
-    jenkins.io/github-folder: "hmsalexaapi"
+    jenkins.io/job-full-name: "hmsalexaapi"
 #    lighthouse.com/website-url: https://harness.io
 #    harness.io/services: |
 #      paymentService: https://app.harness.io/ng/account/IFG41DWvSnaRLOVNB2uesg/cd/orgs/demoorg/projects/paymentservice/services/paymentservice
