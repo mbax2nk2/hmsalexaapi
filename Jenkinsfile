@@ -43,7 +43,8 @@ pipeline {
                                             "field": "metadata.test_coverage_score",
                                             "filter": {
                                                 "kind": "Component",
-                                                "type": "service"
+                                                "type": "service",
+                                                "tags":["nkenenbayev"]
                                             },
                                             "value_overrides": [
                                                 {
