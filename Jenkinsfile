@@ -39,18 +39,21 @@ pipeline {
                     contentType: 'APPLICATION_JSON',
                     requestBody: '''{
                                 "properties": [
-                                            {
-                                                "field": "metadata.test_coverage_score",
-                                                "filter": {
-                                                    "kind": "Component",
-                                                    "type": "service",
-                                                    "tags": [
-                                                        "nkenenbayev"
-                                                    ]
-                                                },
-                                                "value": "1"
-                                            }
-                                        ]
+                                        {
+                                            "field": "metadata.test_coverage_score",
+                                            "filter": {
+                                                "kind": "Component",
+                                                "type": "service"
+                                            },
+                                            "value_overrides": [
+                                                {
+                                                    "entity_ref": "component:hmsalexaapi",
+                                                    "override_value": "30"
+                                                }
+                                            ],
+                                            "value": "0"
+                                        }
+                                    ]
                                 }'''
                 println("Status: ${response.status}")
                 println("Response: ${response.content}")
