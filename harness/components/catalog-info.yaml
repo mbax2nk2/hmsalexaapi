@@ -10,12 +10,12 @@ metadata:
   annotations:
 #    github.com/project-slug: harnessworkshop/idp-workshop
     backstage.io/techdocs-ref: dir:../
-#    jenkins.io/job-full-name: "hmsalexaapi/main"
+    jenkins.io/job-full-name: "hmsalexaapi/main"
 #    lighthouse.com/website-url: https://harness.io
-    harness.io/services: |
-      paymentService: https://app.harness.io/ng/account/IFG41DWvSnaRLOVNB2uesg/cd/orgs/demoorg/projects/paymentservice/services/paymentservice
-    harness.io/pipelines: |
-      paymentService: https://app.harness.io/ng/account/IFG41DWvSnaRLOVNB2uesg/cd/orgs/demoorg/projects/paymentservice/pipelines/harnesscicd/pipeline-studio?storeType=INLINE
+#    harness.io/services: |
+#      paymentService: https://app.harness.io/ng/account/IFG41DWvSnaRLOVNB2uesg/cd/orgs/demoorg/projects/paymentservice/services/paymentservice
+#    harness.io/pipelines: |
+#      paymentService: https://app.harness.io/ng/account/IFG41DWvSnaRLOVNB2uesg/cd/orgs/demoorg/projects/paymentservice/pipelines/harnesscicd/pipeline-studio?storeType=INLINE
 #  labels:
 #    key1: value1
   tags:
@@ -29,5 +29,19 @@ spec:
 #    - component:default/fill-in-your-name-service
 #  consumesApis:
 #    - user-api
-#  providesApis:
-#    - hmsalexaapi-service-api
+  providesApis:
+    - hmsalexaapi-service-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: hmsalexaapi-service-api
+  description: The official CE NEXTGEN service REST APIs
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: TeamA
+  definition:
+    $text: https://github.com/OAI/OpenAPI-Specification/blob/main/examples/v3.0/petstore.json
